@@ -181,7 +181,6 @@
             </TabItem>
 
             <!-- ============== PRODUTOS ============== -->
-            <!-- ============== PRODUTOS ============== -->
             <TabItem Header="Produtos">
                 <Grid Margin="8">
                     <Grid.RowDefinitions>
@@ -275,9 +274,10 @@
                     <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,0,0,8">
                         <TextBlock Text="Pessoa:" VerticalAlignment="Center"/>
                         <ComboBox Width="240" Margin="6,0,16,0"
-                                  ItemsSource="{Binding Pedidos.Pessoas}"
-                                  DisplayMemberPath="Nome"
-                                  SelectedItem="{Binding Pedidos.PessoaSelecionada}"/>
+                              ItemsSource="{Binding Pedidos.Pessoas}"
+                              DisplayMemberPath="Nome"
+                              SelectedValuePath="Id"
+                              SelectedValue="{Binding Pedidos.PessoaSelecionadaId}"/>
                         <TextBlock Text="Pagamento:" VerticalAlignment="Center"/>
                         <ComboBox Width="160" Margin="6,0,0,0"
                                   ItemsSource="{Binding Source={StaticResource FormaPagamentoValues}}"

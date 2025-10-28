@@ -225,16 +225,16 @@ namespace BennerApp
                 return;
             }
 
-            // 1) Seleciona pessoa na VM de pedidos e limpa itens
-            VM.Pedidos.PessoaSelecionada = pessoa;
-            // garante novo pedido "zerado"
+            // Seleciona por Id (evita problema de referência)
+            VM.Pedidos.PessoaSelecionadaId = pessoa.Id;
+
+            // Zera o rascunho do pedido
             while (VM.Pedidos.Itens.Count > 0) VM.Pedidos.RemoverItem(VM.Pedidos.Itens[0]);
             VM.Pedidos.Forma = BennerApp.Models.FormaPagamento.Dinheiro;
             VM.Pedidos.Finalizado = false;
             VM.Pedidos.Total = 0m;
 
-            // 2) Vai para a aba "Pedidos" (índice 2 se as abas estiverem na mesma ordem)
-            Tabs.SelectedIndex = 2;
+            Tabs.SelectedIndex = 2; // vai para a aba Pedidos
         }
 
     }
