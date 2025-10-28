@@ -97,6 +97,19 @@ namespace BennerApp.ViewModels
             Recalcular();
         }
 
+        public void ReloadLookups()
+        {
+            // Pessoas
+            var pessoas = _store.LoadPessoas();
+            Pessoas.Clear();
+            foreach (var p in pessoas) Pessoas.Add(p);
+
+            // Produtos
+            var produtos = _store.LoadProdutos();
+            Produtos.Clear();
+            foreach (var pr in produtos) Produtos.Add(pr);
+        }
+
         public void RemoverItem(ItemPedido item)
         {
             if (item == null) return;

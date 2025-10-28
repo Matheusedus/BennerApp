@@ -82,6 +82,7 @@ namespace BennerApp
                 TxtNomePessoa.Text = "";
                 TxtCpfPessoa.Text = "";
                 TxtEnderecoPessoa.Text = "";
+                VM.Pedidos.ReloadLookups();
             }
             catch (Exception ex)
             {
@@ -167,6 +168,7 @@ namespace BennerApp
                 TxtNomeProduto.Text = "";
                 TxtCodigoProduto.Text = "";
                 TxtValorProduto.Text = "";
+                VM.Pedidos.ReloadLookups();
             }
             catch (Exception ex)
             {
@@ -225,16 +227,18 @@ namespace BennerApp
                 return;
             }
 
-            // Seleciona por Id (evita problema de referência)
+            VM.Pedidos.ReloadLookups();
+
             VM.Pedidos.PessoaSelecionadaId = pessoa.Id;
 
-            // Zera o rascunho do pedido
+            VM.Pedidos.ProdutoSelecionadoId = (ProdutosGrid.SelectedItem as Produto)?.Id;
+
             while (VM.Pedidos.Itens.Count > 0) VM.Pedidos.RemoverItem(VM.Pedidos.Itens[0]);
             VM.Pedidos.Forma = BennerApp.Models.FormaPagamento.Dinheiro;
             VM.Pedidos.Finalizado = false;
             VM.Pedidos.Total = 0m;
 
-            Tabs.SelectedIndex = 2; // vai para a aba Pedidos
+            Tabs.SelectedIndex = 2;
         }
 
     }
