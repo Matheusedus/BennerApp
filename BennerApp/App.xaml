@@ -1,0 +1,13 @@
+﻿<Application x:Class="BennerApp.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:BennerApp"
+             StartupUri="MainWindow.xaml"
+             xmlns:res="clr-namespace:BennerApp.Resources" 
+             xmlns:models="clr-namespace:BennerApp.Models" 
+             xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <Application.Resources>
+        <res:InverseBoolConverter x:Key="InverseBoolConverter"/>
+        <res:StatusEnableConverter x:Key="StatusEnableConverter"/>
+    </Application.Resources>
+</Application>

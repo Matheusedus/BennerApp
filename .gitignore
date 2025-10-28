@@ -1,0 +1,61 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build outputs
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+
+# Test results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+# Packages
+*.nupkg
+*.snupkg
+packages/
+!packages/build/
+*.nuspec
+
+# Data and runtime files
+Data/
+
+# Backup & temp files
+*.tmp
+*.bak
+*.backup
+*.log
+~$*
+*.cache
+*.swp
+
+# ReSharper / Rider
+_ReSharper*/
+*.DotSettings.user
+.idea/
+
+# Visual Studio Code
+.vscode/
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Publish artifacts
+publish/
+*.Publish.xml
+*.pubxml
+
+# Others
+*.dbmdl
+*.pdb
+*.opendb
+*.mdb
+
+# Git merge leftovers
+*.orig
+*.rej
